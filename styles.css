@@ -373,6 +373,184 @@ header h1 {
     background: #ff9ed4;
 }
 
+/* Image Upload Section */
+.image-upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.image-upload-section label {
+    color: #ffc7e7;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#blog-image {
+    padding: 0.5rem;
+    border: 2px solid #ffc7e7;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.image-preview {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.btn-remove-image {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-remove-image:hover {
+    background: #ff5252;
+}
+
+/* Blog Card with Image */
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.blog-detail .blog-image {
+    height: 400px;
+    margin-top: 1rem;
+}
+
+/* Favorite Button */
+.favorite-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ffc7e7;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.favorite-btn:hover {
+    background: #ffc7e7;
+}
+
+.favorite-btn svg {
+    display: block;
+}
+
+.favorite-btn.favorited svg {
+    fill: #ffc7e7;
+}
+
+/* Blog card positioning for favorite button */
+.blog-card {
+    position: relative;
+}
+
+/* Modal Switches */
+.modal-switch {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.modal-switch span {
+    color: #ffc7e7;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.modal-switch span:hover {
+    color: #ff9ed4;
+}
+
+/* Account Section */
+#account-section {
+    text-align: center;
+}
+
+#account-section h2 {
+    color: #ffc7e7;
+    margin-bottom: 1rem;
+}
+
+#account-section p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Favorites Content */
+.favorites-content {
+    min-width: 800px;
+    max-width: 1200px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#favorites-grid {
+    margin-top: 1.5rem;
+}
+
+#favorites-grid:empty::before {
+    content: "No favorite posts yet. Click the star icon on posts to add them to your favorites!";
+    display: block;
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Form styling */
+#admin-login-form,
+#login-form,
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#admin-login-form input,
+#login-form input,
+#signup-form input {
+    padding: 0.75rem;
+    border: 2px solid #ffc7e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#admin-login-form input:focus,
+#login-form input:focus,
+#signup-form input:focus {
+    border-color: #ff9ed4;
+}
+
+#admin-login-form button,
+#login-form button,
+#signup-form button {
+    margin-top: 0.5rem;
+}
+
 /* Hidden class */
 .hidden {
     display: none !important;
@@ -398,7 +576,8 @@ header h1 {
     }
 
     .modal-content,
-    .writing-content {
+    .writing-content,
+    .favorites-content {
         min-width: 90vw;
         max-width: 90vw;
         margin: 1rem;

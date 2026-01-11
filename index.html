@@ -11,6 +11,17 @@
         <div class="header-content">
             <h1>Nene's Blogs</h1>
             <div class="header-icons">
+                <button id="user-account-btn" class="icon-btn" title="User Account">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button id="favorites-btn" class="icon-btn" title="Favorites">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </button>
                 <button id="catalog-btn" class="icon-btn" title="Catalog">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                         <rect x="3" y="3" width="7" height="7"></rect>
@@ -59,11 +70,13 @@
     <div id="auth-modal" class="modal hidden">
         <div class="modal-content">
             <button class="close-btn">&times;</button>
-            <h2>Are you Nene?</h2>
-            <div class="modal-buttons">
-                <button id="yes-btn" class="btn btn-yes">Yes</button>
-                <button id="no-btn" class="btn btn-no">No</button>
-            </div>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <input type="text" id="admin-username" placeholder="Username" required>
+                <input type="password" id="admin-password" placeholder="Password" required>
+                <button type="submit" class="btn btn-yes">Login</button>
+                <button type="button" id="cancel-admin-btn" class="btn btn-no">Cancel</button>
+            </form>
         </div>
     </div>
 
@@ -80,9 +93,59 @@
                     <option value="updates">Updates</option>
                     <option value="thoughts">Thoughts</option>
                 </select>
+                <div class="image-upload-section">
+                    <label for="blog-image">Upload Image (optional)</label>
+                    <input type="file" id="blog-image" accept="image/*">
+                    <div id="image-preview" class="image-preview hidden">
+                        <img id="preview-img" src="" alt="Preview">
+                        <button type="button" id="remove-image-btn" class="btn-remove-image">Remove Image</button>
+                    </div>
+                </div>
                 <textarea id="blog-content-input" placeholder="Write your blog content here..." required></textarea>
                 <button type="submit" class="btn btn-submit">Publish Blog</button>
             </form>
+        </div>
+    </div>
+
+    <!-- User Account Modal -->
+    <div id="user-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <div id="login-section">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-yes">Login</button>
+                </form>
+                <p class="modal-switch">Don't have an account? <span id="show-signup">Sign up</span></p>
+            </div>
+            <div id="signup-section" class="hidden">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <input type="text" id="signup-username" placeholder="Username" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <input type="password" id="signup-password-confirm" placeholder="Confirm Password" required>
+                    <button type="submit" class="btn btn-yes">Sign Up</button>
+                </form>
+                <p class="modal-switch">Already have an account? <span id="show-login">Login</span></p>
+            </div>
+            <div id="account-section" class="hidden">
+                <h2>Welcome, <span id="logged-username"></span>!</h2>
+                <p>You have <span id="favorites-count">0</span> favorite posts</p>
+                <button id="logout-btn" class="btn btn-no">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div id="favorites-modal" class="modal hidden">
+        <div class="modal-content favorites-content">
+            <button class="close-btn">&times;</button>
+            <h2>Your Favorite Posts</h2>
+            <div id="favorites-grid" class="blogs-grid">
+                <!-- Favorite blogs will be displayed here -->
+            </div>
         </div>
     </div>
 
