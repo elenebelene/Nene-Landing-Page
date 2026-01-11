@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nene's Blogs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Nene's Blogs</h1>
+            <div class="header-icons">
+                <button id="catalog-btn" class="icon-btn" title="Catalog">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                    </svg>
+                </button>
+                <button id="upload-btn" class="icon-btn" title="Upload Blog">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside id="catalog-area" class="catalog-area">
+            <h2>Categories</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search blogs...">
+            </div>
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All Blogs</button>
+                <button class="category-btn" data-category="daily-life">Daily Life</button>
+                <button class="category-btn" data-category="updates">Updates</button>
+                <button class="category-btn" data-category="thoughts">Thoughts</button>
+            </div>
+        </aside>
+
+        <main id="blog-area" class="blog-area">
+            <div id="blogs-grid" class="blogs-grid">
+                <!-- Blogs will be dynamically inserted here -->
+            </div>
+            <div id="blog-detail" class="blog-detail hidden">
+                <button id="back-btn" class="back-btn">← Back to Blogs</button>
+                <article id="blog-content">
+                    <!-- Selected blog content will appear here -->
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Authentication Modal -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Are you Nene?</h2>
+            <div class="modal-buttons">
+                <button id="yes-btn" class="btn btn-yes">Yes</button>
+                <button id="no-btn" class="btn btn-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Writing Area Modal -->
+    <div id="writing-modal" class="modal hidden">
+        <div class="modal-content writing-content">
+            <button class="close-btn">&times;</button>
+            <h2>Write a New Blog</h2>
+            <form id="blog-form">
+                <input type="text" id="blog-title" placeholder="Blog Title" required>
+                <select id="blog-category" required>
+                    <option value="">Select Category</option>
+                    <option value="daily-life">Daily Life</option>
+                    <option value="updates">Updates</option>
+                    <option value="thoughts">Thoughts</option>
+                </select>
+                <textarea id="blog-content-input" placeholder="Write your blog content here..." required></textarea>
+                <button type="submit" class="btn btn-submit">Publish Blog</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
